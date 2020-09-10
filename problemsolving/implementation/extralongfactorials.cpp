@@ -1,12 +1,14 @@
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int multiplication_array(int m,int fac[],int size);
+int multiplication_array(int m,vector<int>& fac,int size);
 
 void calculate_factorial(int n)
 {
-    int fac[200],size;
-    fac[0]=1,size=1;
+    vector<int> fac(200);
+    fac[0]=1;
+    int size=1;
     for(int i=2;i<=n;i++)
     {
         size=multiplication_array(i,fac,size);
@@ -17,7 +19,7 @@ void calculate_factorial(int n)
     }
 
 }
-int multiplication_array(int m,int fac[],int size)
+int multiplication_array(int m,vector<int>& fac,int size)
 {
     int p,c=0; //c is the  carry
     for(int i=0;i<size;i++)
@@ -43,3 +45,4 @@ int main()
      calculate_factorial(t);
 
 }
+
